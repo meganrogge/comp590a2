@@ -62,9 +62,7 @@ public class PriorFrameAdaptiveVideoDecoder {
 			int sym = decoder.decode(model, bit_source);
 			frames[frameIndex][i-(frameIndex*4096)] = sym;
 
-			if(sym != -1) {
-				fos.write(sym);
-			} 
+			fos.write(sym);
 
 			model.addToCount(sym);
 
